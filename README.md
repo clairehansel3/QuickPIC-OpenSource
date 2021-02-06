@@ -12,3 +12,7 @@ Please feel free to join in our email list [quickpic-users-developers](https://g
 * [Installation](https://github.com/UCLA-Plasma-Simulation-Group/QuickPIC-OpenSource/wiki/Install-QuickPIC)
 * [Input file](https://github.com/UCLA-Plasma-Simulation-Group/QuickPIC-OpenSource/wiki/Input-File-for-QuickPIC)
 * [Developer Guide](https://ucla-plasma-simulation-group.github.io/QuickPIC-OpenSource/) 
+
+# Claire Hansel Modifications
+
+Hi there! This is a very slightly modified version of QuickPIC which adds a unique id for each beam particle so you can plot trajectories. So far this only works for trigaussian beams (i.e. profile 0). I've provided a little python script to help plot trajectories although its pretty slow so feel free to write a better one. If you have any questions please [contact me on telegram](https://t.me/clairehansel).

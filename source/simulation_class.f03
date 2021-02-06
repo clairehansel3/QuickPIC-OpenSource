@@ -435,8 +435,14 @@
 
             call input%get('simulation.dt',dt)
 
+! BEGIN CLAIRE HANSEL MODIFICATIONS
+! THE FOLLOWING WAS DELETED
+            !call this%beam(i)%new(this%p,this%err,this%sp3,this%pf(i)%p,qbm=qbm,&
+            !&dt=dt,ci=1.0,xdim=7)
+! AND WAS REPLACED WITH
             call this%beam(i)%new(this%p,this%err,this%sp3,this%pf(i)%p,qbm=qbm,&
-            &dt=dt,ci=1.0,xdim=7)
+            &dt=dt,ci=1.0,xdim=8)
+! END CLAIRE HANSEL MODIFICATIONS
 
             call input%get('simulation.read_restart',read_rst)
 

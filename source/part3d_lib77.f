@@ -460,6 +460,11 @@ c local variables
 c borderlx(yz), lower bound; borderx(yz), upper bound.      
       real borderlx,borderly,borderlz, borderx, bordery, borderz 
 
+c BEGIN CLAIRE HANSEL MODIFICATIONS
+      integer id_counter
+      id_counter = 0
+c END CLAIRE HANSEL MODIFICATIONS
+
       ierr = 0
       
       npt = 1
@@ -481,6 +486,11 @@ c borderlx(yz), lower bound; borderx(yz), upper bound.
       do while (k<npy)
       l = l - npz
       do while (l<npz)
+        
+c BEGIN CLAIRE HANSEL MODIFICATIONS
+      id_counter = id_counter + 2
+c END CLAIRE HANSEL MODIFICATIONS
+
   10    tempz = z0+sigz*ranorm()  
         if (tempz>=(borderz) .or. tempz<=borderlz) goto 10
         
@@ -517,6 +527,9 @@ c calculate offset in y
             part(5,npt,m) = tvty
             part(6,npt,m) = tvtz 
             part(7,npt,m) = qm
+c BEGIN CLAIRE HANSEL MODIFICATIONS
+            part(8,npt,m) = id_counter
+c END CLAIRE HANSEL MODIFICATIONS
             npp(m) = npt
           else
             ierr = ierr + 1
@@ -532,6 +545,9 @@ c quiet start
                 part(5,npt,m) = -tvty
                 part(6,npt,m) = tvtz 
                 part(7,npt,m) = qm
+c BEGIN CLAIRE HANSEL MODIFICATIONS
+                part(8,npt,m) = id_counter + 1
+c END CLAIRE HANSEL MODIFICATIONS
                 npp(m) = npt
              else
                 ierr = ierr + 1
